@@ -1,23 +1,4 @@
-accounts = {
-    "1001": {
-        "name": "Alice",
-        "status": "Active",
-        "balance": 5000.00
-    }
-}
-
-
-def account_exists(account_number):
-    return account_number in accounts
-
-
-def valid_name(name):
-    return name.strip() != ""
-
-
-def valid_balance(balance):
-    return balance >= 0
-
+accounts = {}
 
 def create_account(account_number, name, balance):
     accounts[account_number] = {
