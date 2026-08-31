@@ -3,17 +3,6 @@ from support_operations.displayers import display_account
 
 accounts = {}
 
-
-def display_account(account_number):
-    account = accounts[account_number]
-
-    print("\nAccount created successfully!")
-    print(f"Account Number: {account_number}")
-    print(f"Account Holder: {account['name']}")
-    print(f"Status: {account['status']}")
-    print(f"Balance: R{account['balance']:.2f}")
-
-
 def create_account(account_number, name, balance):
     accounts[account_number] = {
         "name": name,
