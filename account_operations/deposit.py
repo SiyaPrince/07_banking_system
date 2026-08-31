@@ -1,34 +1,9 @@
-accounts = {
-    "1001": {
-        "name": "Alice",
-        "status": "Active",
-        "balance": 5000.00
-    },
-    "1002": {
-        "name": "Bob",
-        "status": "Inactive",
-        "balance": 2500.00
-    }
-}
+from support_operations.displayers import display_success
+from support_operations.validators import valid_amount, account_exists, account_is_active
+
+accounts = {}
 
 transactions = []
-
-
-def account_exists(account_number):
-    return account_number in accounts
-
-
-def account_is_active(account_number):
-    return accounts[account_number]["status"] == "Active"
-
-
-def valid_amount(amount):
-    return amount > 0
-
-
-def deposit(account_number, amount):
-    accounts[account_number]["balance"] += amount
-
 
 def create_transaction(account_number, amount):
     transaction = {
@@ -39,20 +14,14 @@ def create_transaction(account_number, amount):
 
     transactions.append(transaction)
 
+def deposit(account_number, amount):
+    accounts[account_number]["balance"] += amount
 
-def display_success(account_number, amount):
-    print("\nDeposit successful!")
-    print(f"Account Number: {account_number}")
-    print(f"Amount Deposited: R{amount:.2f}")
-    print(f"New Balance: R{accounts[account_number]['balance']:.2f}")
-
-
-def main():
     # Select account
     account_number = input("Enter account number: ").strip()
 
     # Validate account exists
-    if not account_exists(account_number):
+    if not account_exists(accounts, account_number):
         print("Error: Account does not exist.")
         return
 
@@ -82,7 +51,4 @@ def main():
     create_transaction(account_number, amount)
 
     # Display success
-    display_success(account_number, amount)
-
-
-main()
+    display_success(accounts, account_number, amount)

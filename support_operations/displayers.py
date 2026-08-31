@@ -28,3 +28,9 @@ def display_account(accounts, account_number):
     print(f"Status: {account['status']}")
     print(f"Balance: R{account['balance']:.2f}")
 
+def display_success(accounts, account_number, amount):
+    print("\nDeposit successful!")
+    print(f"Account Number: {account_number}")
+    print(f"Amount Deposited: R{amount:.2f}")
+    print(f"New Balance: R{accounts[account_number]['balance']:.2f}")
+
