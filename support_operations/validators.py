@@ -12,3 +12,6 @@ def valid_name(name):
 
 def valid_balance(balance):
     return balance >= 0
+
+def sufficient_funds(accounts, account_number, amount):
+    return accounts[account_number]["balance"] >= amount

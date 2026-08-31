@@ -1,4 +1,4 @@
-from support_operations.displayers import display_success
+from support_operations.displayers import display_successful_deposit
 from support_operations.validators import valid_amount, account_exists, account_is_active
 
 accounts = {}
@@ -51,4 +51,4 @@ def deposit(account_number, amount):
     create_transaction(account_number, amount)
 
     # Display success
-    display_success(accounts, account_number, amount)
+    display_successful_deposit(accounts, account_number, amount)
