@@ -1,13 +1,7 @@
 from support_operations.validators import account_exists, valid_balance, valid_name
+from support_operations.displayers import display_account
 
 accounts = {}
-
-def create_account(account_number, name, balance):
-    accounts[account_number] = {
-        "name": name,
-        "status": "Active",
-        "balance": balance
-    }
 
 
 def display_account(account_number):
@@ -20,7 +14,13 @@ def display_account(account_number):
     print(f"Balance: R{account['balance']:.2f}")
 
 
-def main():
+def create_account(account_number, name, balance):
+    accounts[account_number] = {
+        "name": name,
+        "status": "Active",
+        "balance": balance
+    }
+
     # Get account number
     account_number = input("Enter new account number: ").strip()
 
@@ -56,6 +56,3 @@ def main():
 
     # Display success
     display_account(account_number)
-
-
-main()
