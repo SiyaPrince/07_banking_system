@@ -18,3 +18,13 @@ def display_menu():
     print("10. Display Banking Summary")
     print("11. Exit")
     print("=" * 45)
+
+def display_account(accounts, account_number):
+    account = accounts[account_number]
+
+    print("\nAccount created successfully!")
+    print(f"Account Number: {account_number}")
+    print(f"Account Holder: {account['name']}")
+    print(f"Status: {account['status']}")
+    print(f"Balance: R{account['balance']:.2f}")
+

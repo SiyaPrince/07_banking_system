@@ -44,4 +44,4 @@ def create_account(account_number, name, balance):
     create_account(account_number, name, balance)
 
     # Display success
-    display_account(account_number)
+    display_account(accounts, account_number)
