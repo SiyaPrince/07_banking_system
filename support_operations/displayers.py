@@ -1,6 +1,6 @@
 def display_welcome_message():
     print("=" * 45)
-    print("\nWelcome to Prince Siya Bank")
+    print("\nWelcome to Thee Bank")
     print("=" * 45)
 
 def display_menu():
@@ -22,7 +22,7 @@ def display_menu():
 def display_account(accounts, account_number):
     account = accounts[account_number]
 
-    print("\nAccount created successfully!")
+    print("\n--- Account Details ---")
     print(f"Account Number: {account_number}")
     print(f"Account Holder: {account['name']}")
     print(f"Status: {account['status']}")
